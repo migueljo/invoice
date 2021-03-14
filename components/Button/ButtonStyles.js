@@ -73,9 +73,29 @@ export const typeFour = css`
   }
 `
 
-export const typeFive = css``
+export const typeFive = css`
+  button {
+    background-color: ${colors.burntSienna};
+    color: white;
+    padding: 0 24px;
+    transition: opacity 300ms;
+  }
+  button:hover {
+    opacity: 0.9;
+  }
+`
 
-export const typeSix = css``
+export const typeSix = css`
+  button {
+    background-color: ${colors.whisper};
+    color: ${colors.shipCove};
+    padding: 0 24px;
+    transition: background-color 300ms;
+  }
+  button:hover {
+    background-color: ${colors.selago};
+  }
+`
 
 export default css`
   button {

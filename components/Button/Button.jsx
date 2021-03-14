@@ -6,7 +6,9 @@ import styles, {
   typeOne as typeOneStyles,
   typeTwo as typeTwoStyles,
   typeThree as typeThreeStyles,
-  typeFour as typeFourStyles
+  typeFour as typeFourStyles,
+  typeFive as typeFiveStyles,
+  typeSix as typeSixStyles
 } from './ButtonStyles'
 
 function TypeOne ({ title, icon }) {
@@ -29,20 +31,13 @@ function TypeOne ({ title, icon }) {
 }
 TypeOne.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string // TODO: oneOf...
+  icon: PropTypes.string.isRequired
 }
 
-function TypeTwo ({ title, icon }) {
+function TypeTwo ({ title }) {
   return (
     <>
       <button>
-        {
-          icon && (
-            <div className='icon'>
-              <Icon name={icon} />
-            </div>
-          )
-        }
         <span className="title">{title}</span>
       </button>
       <style jsx>{styles}</style>
@@ -52,24 +47,16 @@ function TypeTwo ({ title, icon }) {
 }
 
 TypeTwo.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string // TODO: oneOf...
+  title: PropTypes.string.isRequired
 }
 
-function TypeThree ({ title, icon }) {
+function TypeThree ({ title }) {
   const [darkMode] = React.useState(true)
   const btnClass = darkMode ? 'dark-mode' : ''
 
   return (
     <>
       <button className={btnClass}>
-        {
-          icon && (
-            <div className='icon'>
-              <Icon name={icon} />
-            </div>
-          )
-        }
         <span className="title">{title}</span>
       </button>
       <style jsx>{styles}</style>
@@ -79,11 +66,48 @@ function TypeThree ({ title, icon }) {
 }
 
 TypeThree.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string // TODO: oneOf...
+  title: PropTypes.string.isRequired
 }
 
-function TypeFour ({ title, icon }) {
+function TypeFour ({ title }) {
+  const [darkMode] = React.useState(false)
+  const btnClass = darkMode ? 'dark-mode' : ''
+
+  return (
+    <>
+      <button className={btnClass}>
+        <span className="title">{title}</span>
+      </button>
+      <style jsx>{styles}</style>
+      <style jsx>{typeFourStyles}</style>
+    </>
+  )
+}
+
+TypeFour.propTypes = {
+  title: PropTypes.string.isRequired
+}
+
+function TypeFive ({ title }) {
+  const [darkMode] = React.useState(false)
+  const btnClass = darkMode ? 'dark-mode' : ''
+
+  return (
+    <>
+      <button className={btnClass}>
+        <span className="title">{title}</span>
+      </button>
+      <style jsx>{styles}</style>
+      <style jsx>{typeFiveStyles}</style>
+    </>
+  )
+}
+
+TypeFive.propTypes = {
+  title: PropTypes.string.isRequired
+}
+
+function TypeSix ({ title, icon }) {
   const [darkMode] = React.useState(false)
   const btnClass = darkMode ? 'dark-mode' : ''
 
@@ -100,36 +124,49 @@ function TypeFour ({ title, icon }) {
         <span className="title">{title}</span>
       </button>
       <style jsx>{styles}</style>
-      <style jsx>{typeFourStyles}</style>
+      <style jsx>{typeSixStyles}</style>
     </>
   )
 }
 
-TypeFour.propTypes = {
+TypeSix.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string // TODO: oneOf...
+  icon: PropTypes.string
+}
+
+export const BUTTON_TYPES = {
+  one: 'one',
+  two: 'two',
+  three: 'three',
+  four: 'four',
+  five: 'five',
+  six: 'six'
 }
 
 export default function Button ({ type, ...props }) {
   // TODO: use an enum here
   switch (type) {
-    case 'one':
+    case BUTTON_TYPES.one:
       return <TypeOne {...props} />
-    case 'two':
+    case BUTTON_TYPES.two:
       return <TypeTwo {...props} />
-    case 'three':
+    case BUTTON_TYPES.three:
       return <TypeThree {...props} />
-    case 'four':
+    case BUTTON_TYPES.four:
       return <TypeFour {...props} />
+    case BUTTON_TYPES.five:
+      return <TypeFive {...props} />
+    case BUTTON_TYPES.six:
+      return <TypeSix {...props} />
   }
 }
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string, // TODO: oneOf...
-  type: PropTypes.string // TODO: oneOf...
+  type: PropTypes.oneOf(Object.keys(BUTTON_TYPES)) // TODO: oneOf...
 }
 
 Button.defaultProps = {
-  type: 'one'
+  type: BUTTON_TYPES.one
 }

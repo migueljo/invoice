@@ -10,5 +10,9 @@ export default {
   mirage: '#1E2139',
   ebonyClay: '#252945',
   oxfordBlue: '#373B53',
-  vulcan: '#0C0E16'
+  vulcan: '#0C0E16',
+  white: 'white',
+  black: 'black',
+  gray: 'gray',
+  lightGray: 'lightgray'
 }
