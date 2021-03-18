@@ -1,102 +1,6 @@
 import css from 'styled-jsx/css'
 import colors from 'utils/colors'
 
-export const typeOne = css`
-  button {
-    background-color: ${colors.cornflowerBlue};
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px 0 8px;
-    transition: opacity 300ms;
-  }
-
-  button:hover {
-    opacity: 0.9;
-  }
-
-  .icon {
-    margin-right: 16px;
-    padding: 0;
-  }
-`
-
-export const typeTwo = css`
-  button {
-    background-color: ${colors.cornflowerBlue};
-    color: white;
-    padding: 0 24px;
-    transition: opacity 300ms;
-  }
-
-  button:hover {
-    opacity: 0.9;
-  }
-`
-
-export const typeThree = css`
-  button {
-    background-color: ${colors.whisper};
-    color: ${colors.shipCove};
-    padding: 0 24px;
-    transition: background-color 300ms;
-  }
-  button:hover {
-    background-color: ${colors.selago};
-  }
-  button.dark-mode {
-    background-color: ${colors.ebonyClay};
-    color: ${colors.selago};
-  }
-  button.dark-mode:hover {
-    background-color: transparent;
-  }
-`
-
-export const typeFour = css`
-  button {
-    background-color: ${colors.oxfordBlue};
-    color: ${colors.baliHai};
-    padding: 0 24px;
-    transition: background-color 300ms;
-  }
-  button:hover {
-    background-color: ${colors.vulcan};
-  }
-  button.dark-mode {
-    background-color: ${colors.oxfordBlue};
-    color: ${colors.selago};
-  }
-  button.dark-mode:hover {
-    background-color: ${colors.mirage};
-  }
-`
-
-export const typeFive = css`
-  button {
-    background-color: ${colors.burntSienna};
-    color: white;
-    padding: 0 24px;
-    transition: opacity 300ms;
-  }
-  button:hover {
-    opacity: 0.9;
-  }
-`
-
-export const typeSix = css`
-  button {
-    background-color: ${colors.whisper};
-    color: ${colors.shipCove};
-    padding: 0 24px;
-    transition: background-color 300ms;
-  }
-  button:hover {
-    background-color: ${colors.selago};
-  }
-`
-
 export default css`
   button {
     border: 0;
@@ -107,5 +11,90 @@ export default css`
     font-weight: bold;
     cursor: pointer;
     text-align: center;
+  }
+
+  .button-one {
+    background-color: ${colors.cornflowerBlue};
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 0 8px;
+    transition: opacity 300ms;
+  }
+
+  .button-one:hover {
+    opacity: 0.9;
+  }
+
+  .icon-one {
+    margin-right: 16px;
+    padding: 0;
+  }
+
+  .button-two {
+    background-color: ${colors.cornflowerBlue};
+    color: white;
+    padding: 0 24px;
+    transition: opacity 300ms;
+  }
+
+  .button-two:hover {
+    opacity: 0.9;
+  }
+
+  .button-three {
+    background-color: ${colors.whisper};
+    color: ${colors.shipCove};
+    padding: 0 24px;
+    transition: background-color 300ms;
+  }
+  .button-three:hover {
+    background-color: ${colors.selago};
+  }
+  .button-three.dark-mode {
+    background-color: ${colors.ebonyClay};
+    color: ${colors.selago};
+  }
+  .button-three.dark-mode:hover {
+    background-color: transparent;
+  }
+
+  .button-four {
+    background-color: ${colors.oxfordBlue};
+    color: ${colors.baliHai};
+    padding: 0 24px;
+    transition: background-color 300ms;
+  }
+  .button-four:hover {
+    background-color: ${colors.vulcan};
+  }
+  .button-four.dark-mode {
+    background-color: ${colors.oxfordBlue};
+    color: ${colors.selago};
+  }
+  .button-four.dark-mode:hover {
+    background-color: ${colors.mirage};
+  }
+
+  .button-five {
+    background-color: ${colors.burntSienna};
+    color: white;
+    padding: 0 24px;
+    transition: opacity 300ms;
+  }
+  .button-five:hover {
+    opacity: 0.9;
+    background-color: ${colors.burntSienna};
+  }
+
+  .button-six {
+    background-color: ${colors.whisper};
+    color: ${colors.shipCove};
+    padding: 0 24px;
+    transition: background-color 300ms;
+  }
+  .button-six:hover {
+    background-color: ${colors.selago};
   }
 `

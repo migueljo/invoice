@@ -13,9 +13,10 @@ export default css`
   }
 
   input {
-    border: 1px solid ${colors.selago};
+    background-color: ${colors.white};
     box-sizing: border-box;
     border-radius: 4px;
+    border: 1px solid ${colors.selago};
     height: 48px;
     padding: 0 20px;
     color: ${colors.vulcan};
@@ -24,5 +25,10 @@ export default css`
   }
   input:focus {
     border-color: ${colors.heliotrope};
+  }
+  input.dark-mode {
+    background-color: ${colors.mirage};
+    border-color: ${colors.ebonyClay};
+    color: ${colors.white};
   }
 `
